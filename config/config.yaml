@@ -1,0 +1,29 @@
+# General Project Settings 
+
+project:
+  name: "ProductionReadyPipelines"
+  description: "My own production-ready pipelines for data science projects"
+  version: "1.0.0"
+  environment : "Dev"
+  region: "east-us-2"
+  owner: "Neeraj yadav"
+  role : "arn:aws:iam::257334481187:role/AmazonSageMaker-ExecutionRole-20250506T112552"
+
+# S3 bucket settings 
+s3: 
+  bucket_name: "sagemaker-us-east-2-257334481187"
+  bucket_prefix: "data"
+  bucket_region: "east-us-2"
+
+# training job settings 
+training:
+  instance_type: "ml.m5.large"
+  instance_count: 1
+  max_run_time: 3600
+  volume_size: 30
+  output_path: "s3://{{sagemaker-us-east-2-257334481187}}/output"
+  role_arn: "{{arn:aws:iam::257334481187:role/AmazonSageMaker-ExecutionRole-20250506T112552}}"
+  hyperparameters:
+    batch_size: 32
+    learning_rate: 0.001
+    epochs: 10

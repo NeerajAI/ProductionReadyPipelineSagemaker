@@ -3,7 +3,7 @@ from pathlib import Path
 import logging 
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: - %(levelname)s - %(message)s')
 
-project_name = "ProductionReadyPipelineSagemaker"
+project_name = "ProdPipeline"
 list_of_files = [
     ".github/workflows/.gitkeep",
     f"src/{project_name}/__init__.py", ## local package 5
